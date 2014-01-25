@@ -2,13 +2,13 @@ IMPORTANT - PLEASE READ: http://tidythemes.com/concept/
 
 YOU MAY DELETE THIS FILE AND ANY OTHER FILE(S) BEFORE STARTING YOUR PROJECT
 
-If you're creating your own theme/client project open up all files and do a "Find and Replace All in All Files" on the word "blankslate" with your own slug/prefix.
+If you're creating your own theme/client project open up all files and do a "Find and Replace All in All Files" on the word "draya" with your own slug/prefix.
 
 - - THEME - -
 
 BlankSlate WordPress Theme
-Demo: http://wp-themes.com/blankslate/
-Download: http://wordpress.org/themes/blankslate
+Demo: http://wp-themes.com/draya/
+Download: http://wordpress.org/themes/draya
 
 - - DESCRIPTION - -
 
