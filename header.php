@@ -22,12 +22,12 @@
       <div class="row">
         <div class="large-12 columns">
           <header>
-            <p id="site-title">
-              <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php esc_attr_e( get_bloginfo( 'name' ), 'draya' ); ?>" rel="home">
-              <?php echo esc_html( get_bloginfo( 'name' ) ); ?>
-              </a>
-            </p>
-            <p id="site-description"><?php bloginfo( 'description' ); ?></p>
+			      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php esc_attr_e( get_bloginfo( 'name' ), 'draya' ); ?>" rel="home">
+	            <p id="site-title">
+	              <?php echo esc_html( get_bloginfo( 'name' ) ); ?>
+	            </p>
+	            <p id="site-description"><?php bloginfo( 'description' ); ?></p>
+            </a>
           </header>
 
           <div class="contain-to-grid sticky">
