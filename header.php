@@ -1,63 +1,64 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
-  <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+  <meta charset="<?php bloginfo( 'charset' ); ?>" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title><?php wp_title( ' | ', true, 'right' ); ?></title>
-    
-    <meta name="description" content="Draya's awesome blog thing.">
-    
-    <meta name="author" content="ZURB, inc. ZURB network also includes zurb.com">
-    <meta name="copyright" content="ZURB, inc. Copyright (c) 2013">
+  <title><?php wp_title( ' | ', true, 'right' ); ?></title>
+  
+  <meta name="description" content="Draya's awesome blog thing.">
+  
+  <meta name="author" content="ZURB, inc. ZURB network also includes zurb.com">
+  <meta name="copyright" content="ZURB, inc. Copyright (c) 2013">
 
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/foundation/5.0.2/css/foundation.min.css">
-<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
-    <script src="//cdn.jsdelivr.net/foundation/5.0.2/js/modernizr.js"></script>
-<?php wp_head(); ?>
-  </head>
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/foundation/5.0.3/css/foundation.min.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
+  <script src="//cdn.jsdelivr.net/foundation/5.0.3/js/vendor/modernizr.js"></script>
+  <?php wp_head(); ?>
+</head>
 <body <?php body_class(); ?>>
   <div class="row">
     <div class="large-9 columns" role="content">
+      <div class="row">
+        <div class="large-12 columns">
+          <header>
+            <p id="site-title">
+              <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php esc_attr_e( get_bloginfo( 'name' ), 'draya' ); ?>" rel="home">
+              <?php echo esc_html( get_bloginfo( 'name' ) ); ?>
+              </a>
+            </p>
+            <p id="site-description"><?php bloginfo( 'description' ); ?></p>
+          </header>
 
-  <div class="row">
-    <div class="large-12 columns">
-      <header>
-<div id="site-title"><?php if ( ! is_singular() ) { echo '<h1>'; } ?><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php esc_attr_e( get_bloginfo( 'name' ), 'draya' ); ?>" rel="home"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a><?php if ( ! is_singular() ) { echo '</h1>'; } ?></div>
-<div id="site-description"><?php bloginfo( 'description' ); ?></div>
-        <h1>Marti's Miscellany<br>
-        <small>This is my blog. It's awesome.</small></h1>
-      </header>
-<?php get_search_form(); ?>
-
-      <div class="contain-to-grid sticky">
-        <nav class="top-bar" data-topbar>
-          <ul class="title-area">
-          <li class="name">
-            <h1><a href="#">My Site</a></h1>
-          </li>
-          <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
-<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
-        </ul>
-
-        <section class="top-bar-section">
-          <!-- Right Nav Section -->
-          <ul class="right">
-            <li class="active"><a href="#">Right Button Active</a></li>
-            <li class="has-dropdown">
-              <a href="#">Right Button with Dropdown</a>
-              <ul class="dropdown">
-                <li><a href="#">First link in dropdown</a></li>
+          <div class="contain-to-grid sticky">
+            <nav class="top-bar" data-topbar>
+              <ul class="title-area">
+                <li class="name">
+                  <h1><a href="#">My Site</a></h1>
+                </li>
+                <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+                <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
               </ul>
-            </li>
-          </ul>
 
-          <!-- Left Nav Section -->
-          <ul class="left">
-            <li><a href="#">Left Nav Button</a></li>
-          </ul>
-        </section>
-      </nav>
+              <?php #get_search_form(); ?>
+              <section class="top-bar-section">
+                <!-- Right Nav Section -->
+                <ul class="right">
+                  <li class="active"><a href="#">Right Button Active</a></li>
+                  <li class="has-dropdown">
+                    <a href="#">Right Button with Dropdown</a>
+                    <ul class="dropdown">
+                      <li><a href="#">First link in dropdown</a></li>
+                    </ul>
+                  </li>
+                </ul>
+
+                <!-- Left Nav Section -->
+                <ul class="left">
+                  <li><a href="#">Left Nav Button</a></li>
+                </ul>
+              </section>
+            </nav>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>

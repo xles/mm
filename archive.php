@@ -13,5 +13,8 @@ else { _e( 'Archives', 'draya' ); }
 <?php endwhile; endif; ?>
 <?php get_template_part( 'nav', 'below' ); ?>
 </section>
+</div>
+<div class="large-3 columns">
 <?php get_sidebar(); ?>
+</div>
 <?php get_footer(); ?>

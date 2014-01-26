@@ -14,5 +14,8 @@
 <?php if ( ! post_password_required() ) comments_template( '', true ); ?>
 <?php endwhile; endif; ?>
 </section>
+</div>
+<div class="large-3 columns">
 <?php get_sidebar(); ?>
+</div>
 <?php get_footer(); ?>

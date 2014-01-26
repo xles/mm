@@ -12,12 +12,40 @@ Text Domain: draya
 
 Draya WordPress Theme © 2014 xles
 */
-@import url(http://fonts.googleapis.com/css?family=The+Girl+Next+Door);
+@import url('https://fonts.googleapis.com/css?family=The+Girl+Next+Door');
+@import url('webicons-master/webicons.css');
+p {
+	line-height: 1.5em;
+	margin:0;
+}
+p + p {
+	margin-top: 1.5em;
+}
+article.hyphenate {
+	text-align: justify;
+}
 #site-title {
 	font-family: 'The Girl Next Door', cursive;
+	font-size: 3rem;
+	line-height: 4.5rem;
+	margin-bottom: 0;
+	margin-left: 3.0rem;
 }
 #site-description {
-
+	font-family: 'The Girl Next Door', cursive;
+	margin-left: 4.5rem;
+	font-size: 1.5rem;
+	margin-bottom: 1.5rem;
+	margin-top: -1.5rem;
+}
+.widget-title {
+	font-size: 1.0rem;
+	font-weight: 100;
+	text-align: center;
+}
+.widget-container {
+	padding-bottom: 1.5rem;
+	border-bottom: 0.1rem #ddd solid;
 }
 .clear {
 	clear:both;

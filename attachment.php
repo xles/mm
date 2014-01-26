@@ -28,5 +28,8 @@
 <?php comments_template(); ?>
 <?php endwhile; endif; ?>
 </section>
+</div>
+<div class="large-3 columns">
 <?php get_sidebar(); ?>
+</div>
 <?php get_footer(); ?>

@@ -20,5 +20,8 @@
 </article>
 <?php endif; ?>
 </section>
+</div>
+<div class="large-3 columns">
 <?php get_sidebar(); ?>
+</div>
 <?php get_footer(); ?>
