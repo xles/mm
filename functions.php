@@ -1,4 +1,6 @@
 <?php
+require_once ( get_template_directory() . '/theme-options.php' );
+
 add_action( 'after_setup_theme', 'draya_setup' );
 
 function draya_setup()
@@ -90,31 +92,57 @@ add_filter('stylesheet_uri','wpi_stylesheet_uri',10,2);
 
 function wpi_stylesheet_uri($stylesheet_uri, $stylesheet_dir_uri)
 {
-    return $stylesheet_dir_uri.'/css/style.css';
+    return $stylesheet_dir_uri.'/style.css';
+    //return $stylesheet_dir_uri.'/css/style.css';
 }
 
 function stick_admin_bar_to_bottom_css() {
-        echo "
-        <style type='text/css'>
-        html {
-                padding-bottom: 28px !important;
-        }
-        
-        body {
-                margin-top: -28px;
-        }
-        
-        #wpadminbar {
-                top: auto !important;
-                bottom: 0;
-        }
- 
-        #wpadminbar .quicklinks .menupop ul {
-                bottom: 28px;
-        }
-        </style>
-        ";
+        echo '
+	<style type="text/css">
+		body {
+			margin-top: -28px;
+			padding-bottom: 28px;
+		}
+		body.admin-bar #wphead {
+			padding-top: 0;
+		}
+		body.admin-bar #footer {
+			padding-bottom: 28px;
+		}
+		#wpadminbar {
+			top: auto !important;
+			bottom: 0;
+		}
+		#wpadminbar .quicklinks .menupop ul {
+			bottom: 28px;
+		}
+		#wpadminbar{
+			top:auto;
+			bottom:0;
+		}
+		@media screen and (max-width: 600px) {
+			#wpadminbar{
+				position:fixed;
+			}
+		}
+		#wpadminbar .menupop .ab-sub-wrapper,
+		#wpadminbar .shortlink-input {
+			bottom:32px;
+		}
+		@media screen and (max-width: 782px) {
+			#wpadminbar .menupop .ab-sub-wrapper,
+			#wpadminbar .shortlink-input {
+				bottom:46px;
+			}
+		}
+		@media screen and (min-width: 783px) {
+			.admin-bar.masthead-fixed .site-header {
+				top:0;
+			}
+		}
+	</style>
+        ';
 }
 
-add_action('admin_head', 'stick_admin_bar_to_bottom_css');
+#add_action('admin_head', 'stick_admin_bar_to_bottom_css');
 add_action('wp_head', 'stick_admin_bar_to_bottom_css');
