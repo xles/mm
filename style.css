@@ -25,16 +25,18 @@ p + p {
 article.hyphenate {
 	text-align: justify;
 }
-#site-title {
+#site-title, #site-description {
 	font-family: 'The Girl Next Door', cursive;
+	text-align: right;
+}
+#site-title {
 	font-size: 3rem;
 	line-height: 4.5rem;
 	margin-bottom: 0;
-	margin-left: 3.0rem;
+	margin-right: 1.5rem;
 }
 #site-description {
-	font-family: 'The Girl Next Door', cursive;
-	margin-left: 4.5rem;
+	margin-right: 4.0rem;
 	font-size: 1.5rem;
 	margin-bottom: 1.5rem;
 	margin-top: -1.5rem;
@@ -74,6 +76,20 @@ article.hyphenate {
 }
 .aligncenter {
 
+}
+body {
+	padding-top: 3em;
+	padding-bottom: 3em;
+	background-color: #333;
+}
+#main {
+	padding-top: 1.5em;
+	padding-bottom: 1.5em;
+	background-color: #FFF;
+}
+article {
+	padding-bottom: 3em;
+	border-bottom: 0.1em #ddd solid;
 }
 @media print {
 	* {

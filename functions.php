@@ -1,6 +1,6 @@
 <?php
-require_once ( get_template_directory() . '/theme-options.php' );
 
+require_once ( get_template_directory() . '/customizer.php' );
 add_action( 'after_setup_theme', 'draya_setup' );
 
 function draya_setup()

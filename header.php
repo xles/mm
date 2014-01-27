@@ -17,7 +17,7 @@
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-  <div class="row">
+  <div class="row" id="main">
     <div class="large-9 columns" role="content">
       <div class="row">
         <div class="large-12 columns">
@@ -37,11 +37,11 @@
                   <h1><a href="#">My Site</a></h1>
                 </li>
                 <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
-                <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
               </ul>
 
               <?php #get_search_form(); ?>
               <section class="top-bar-section">
+                <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
                 <!-- Right Nav Section -->
                 <ul class="right">
                   <li class="active"><a href="#">Right Button Active</a></li>
