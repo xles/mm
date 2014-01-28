@@ -1,19 +1,9 @@
   </div>
-  <footer class="row">
+  <footer class="row text-center">
     <div class="large-12 columns">
-      <div class="row">
-        <div class="large-6 columns">
-          <?php echo sprintf( __( '%1$s %2$s %3$s. All Rights Reserved.', 'draya' ), '&copy;', date( 'Y' ), esc_html( get_bloginfo( 'name' ) ) ); echo sprintf( __( ' Theme By: %1$s.', 'draya' ), '<a href="http://tidythemes.com/">TidyThemes</a>' ); ?>
-        </div>
-        <div class="large-6 columns">
-          <ul class="inline-list right">
-            <li><a href="#">Link 1</a></li>
-            <li><a href="#">Link 2</a></li>
-            <li><a href="#">Link 3</a></li>
-            <li><a href="#">Link 4</a></li>
-          </ul>
-        </div>
-      </div>
+      <?php 
+        echo sprintf( __( '%1$s %2$s %3$s. All Rights Reserved.', 'draya' ), '&copy;', date( 'Y' ), esc_html( get_bloginfo( 'name' ) ) ); 
+      ?>
     </div>
   </footer>
   <?php wp_footer(); ?>

@@ -78,20 +78,25 @@ article.hyphenate {
 
 }
 body {
-	padding-top: 3em;
-	padding-bottom: 3em;
-	background-color: #333;
+	background: #333 url('img/pipe.jpg') fixed 0 0;
+	background-size:100%;
 }
 #main {
-	padding-top: 1.5em;
+	margin-top: 6em;
 	padding-bottom: 1.5em;
 	background-color: #FFF;
 }
+#main .sticky {
+	margin-bottom: 1.5rem;
+}
 article {
 	padding-bottom: 3em;
-	border-bottom: 0.1em #ddd solid;
+	border-top: 0.1em #ddd solid;
 }
 body > footer {
+	padding-top: 1.5em;
+	padding-bottom: 9em;
+	background-color: #222;
 	color:#ccc;
 }
 @media print {

@@ -1,22 +1,76 @@
 <!doctype html>
 <html lang="en" class="no-js">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marti's Miscellany</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marti's Miscellany</title>
 
-    
-    <meta name="description" content="Draya's awesome blog thing.">
-    
-    <meta name="author" content="ZURB, inc. ZURB network also includes zurb.com">
-    <meta name="copyright" content="ZURB, inc. Copyright (c) 2013">
+  
+  <meta name="description" content="Draya's awesome blog thing.">
+  
+  <meta name="author" content="ZURB, inc. ZURB network also includes zurb.com">
+  <meta name="copyright" content="ZURB, inc. Copyright (c) 2013">
 
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/foundation/5.0.3/css/foundation.min.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="//cdn.jsdelivr.net/foundation/5.0.3/js/vendor/modernizr.js"></script>
-  </head>
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/foundation/5.0.3/css/foundation.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="//cdn.jsdelivr.net/foundation/5.0.3/js/vendor/modernizr.js"></script>
+</head>
 <body>
   <div class="row" id="main">
+      <div class="contain-to-grid sticky">
+        <nav class="top-bar" data-topbar="">
+          <!-- Title -->
+          <ul class="title-area">
+            <li class="name"><h1><a href="#">Sexy Top Bar</a></h1></li>
+
+            <!-- Mobile Menu Toggle -->
+            <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+          </ul>
+
+          <!-- Top Bar Section -->
+          
+          <section class="top-bar-section">
+
+            <!-- Top Bar Left Nav Elements -->
+            <ul class="left">
+
+              <li class="has-form">
+                <div class="row collapse">
+                  <div class="large-8 small-9 columns">
+                    <input type="text" name="s" placeholder="Find Stuff" style="height: 1.8rem;">
+                  </div>
+                  <div class="large-4 small-3 columns">
+                    <input type="submit" class="alert button expand" value="Search">
+                  </div>
+                </div>
+              </li>
+              <li class="divider"></li>
+            </ul>
+
+            <!-- Top Bar Right Nav Elements -->
+            <ul class="right">
+              <!-- Divider -->
+              <li class="divider"></li>
+
+              <li class="has-dropdown">
+                <a href="#"><i class="fi-magnifying-glass"></i></a>
+                <ul class="dropdown">
+                  <li class="has-form">
+                    <div class="row collapse">
+                      <div class="large-12 columns">
+                        
+                        <input type="text" placeholder="Find Stuff">
+                        <input type="submit" class="button" value="Search">
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+            </ul>
+          </section>
+        </nav>
+      </div>
+
+
     <div class="large-9 columns" role="content">
 
       <div class="row">
@@ -27,66 +81,10 @@
               <p id="site-description">Days in the life of a Christian Furry Gaming Freelancer</p>
             </a>
           </header>
-
-          <div class="contain-to-grid sticky">
-<nav class="top-bar" data-topbar="">
-  <!-- Title -->
-  <ul class="title-area">
-    <li class="name"><h1><a href="#">Sexy Top Bar</a></h1></li>
-
-    <!-- Mobile Menu Toggle -->
-    <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
-  </ul>
-
-  <!-- Top Bar Section -->
-  
-<section class="top-bar-section">
-
-    <!-- Top Bar Left Nav Elements -->
-    <ul class="left">
-
-      <!-- Search | has-form wrapper -->
-      <li class="has-form">
-        <a class="button">Test</a>
-      </li>
-      <!-- Dropdown -->
-
-      <li class="divider"></li>
-
-      <!-- Anchor -->
-      <li><a href="#">Generic Button</a></li>
-      <li class="divider"></li>
-
-      <!-- Button -->
-      <li class="has-form show-for-large-up">
-        <a href="http://foundation.zurb.com/docs" class="button">Get Lucky</a>
-      </li>
-    </ul>
-
-    <!-- Top Bar Right Nav Elements -->
-    <ul class="right">
-      <!-- Divider -->
-      <li class="divider"></li>
-
-      <li class="has-dropdown">
-        <a href="#"><i class="fi-magnifying-glass"></i></a>
-        <ul class="dropdown">
-          <li class="has-form">
-            <div class="row collapse">
-              <div class="large-12 columns">
-                
-                <input type="text" placeholder="Find Stuff">
-                <button type="submit" class="button">Search</a>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </section></nav>
-            </div>
         </div>
       </div>
+      <div class="row">
+        <div class="large-12 columns">
 
       <article>
         <header>
@@ -107,9 +105,12 @@
       </article>
 
       <article class="hyphenate">
-
-        <h3><a href="#">Blog Post Title</a></h3>
-        <h6>Written by <a href="#">John Smith</a> on August 12, 2012.</h6>
+        <header>
+          <a href="#">
+            <h1><a href="#">Blog Post Title</a></h1>
+            <p>Written by <a href="#">John Smith</a> on <time>August 12, 2012.</time></p>
+          </a>
+        </header>
 
         <div class="row">
           <div class="large-6 columns">
@@ -126,9 +127,22 @@
         <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
 
       </article>
-
+      <div class="pagination-centered">      
+        <ul class="pagination">
+          <li class="arrow unavailable"><a href="">&laquo;</a></li>
+          <li class="current"><a href="">1</a></li>
+          <li><a href="">2</a></li>
+          <li><a href="">3</a></li>
+          <li><a href="">4</a></li>
+          <li class="unavailable"><a href="">&hellip;</a></li>
+          <li><a href="">12</a></li>
+          <li><a href="">13</a></li>
+          <li class="arrow"><a href="">&raquo;</a></li>
+        </ul>
+      </div>
     </div>
-
+  </div>
+</div>
     <!-- End Main Content -->
 
 
@@ -196,10 +210,8 @@
 
   <!-- Footer -->
 
-  <footer class="row text-center">
-    <div class="large-12 columns">
+  <footer class="text-center">
           <p>&copy; Copyright no one at all. Go to town.</p>
-    </div>
   </footer>
   <script src="//cdn.jsdelivr.net/foundation/5.0.3/js/vendor/jquery.js"></script>
   <script src="//cdn.jsdelivr.net/foundation/5.0.3/js/foundation.min.js"></script>

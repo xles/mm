@@ -2,7 +2,7 @@
 	<li class="has-form">
 	  <div class="row collapse">
 	    <div class="large-8 small-9 columns">
-	      <input type="text" name="s" placeholder="Find Stuff">
+	      <input type="text" name="s" placeholder="Find Stuff" style="height: 1.8rem;">
 	    </div>
 	    <div class="large-4 small-3 columns">
 				<input type="submit" class="alert button expand" value="Search">

@@ -18,18 +18,6 @@
 </head>
 <body <?php body_class(); ?>>
   <div class="row" id="main">
-    <div class="large-9 columns" role="content">
-      <div class="row">
-        <div class="large-12 columns">
-          <header>
-			      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php esc_attr_e( get_bloginfo( 'name' ), 'draya' ); ?>" rel="home">
-	            <p id="site-title">
-	              <?php echo esc_html( get_bloginfo( 'name' ) ); ?>
-	            </p>
-	            <p id="site-description"><?php bloginfo( 'description' ); ?></p>
-            </a>
-          </header>
-
           <div class="contain-to-grid sticky">
             <nav class="top-bar" data-topbar>
               <ul class="title-area">
@@ -49,5 +37,17 @@
               </section>
             </nav>
           </div>
+    <div class="large-9 columns" role="content">
+      <div class="row">
+        <div class="large-12 columns">
+          <header>
+			      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php esc_attr_e( get_bloginfo( 'name' ), 'draya' ); ?>" rel="home">
+	            <p id="site-title">
+	              <?php echo esc_html( get_bloginfo( 'name' ) ); ?>
+	            </p>
+	            <p id="site-description"><?php bloginfo( 'description' ); ?></p>
+            </a>
+          </header>
+
         </div>
       </div>
