@@ -34,28 +34,17 @@
             <nav class="top-bar" data-topbar>
               <ul class="title-area">
                 <li class="name">
-                  <h1><a href="#">My Site</a></h1>
+                  <h1><a href="/">Marti's</a></h1>
                 </li>
                 <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
               </ul>
 
-              <?php #get_search_form(); ?>
               <section class="top-bar-section">
-                <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
-                <!-- Right Nav Section -->
-                <ul class="right">
-                  <li class="active"><a href="#">Right Button Active</a></li>
-                  <li class="has-dropdown">
-                    <a href="#">Right Button with Dropdown</a>
-                    <ul class="dropdown">
-                      <li><a href="#">First link in dropdown</a></li>
-                    </ul>
-                  </li>
-                </ul>
-
-                <!-- Left Nav Section -->
                 <ul class="left">
-                  <li><a href="#">Left Nav Button</a></li>
+                  <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
+                </ul>
+                <ul class="right">
+                  <?php get_search_form(); ?>
                 </ul>
               </section>
             </nav>

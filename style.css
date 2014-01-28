@@ -91,6 +91,9 @@ article {
 	padding-bottom: 3em;
 	border-bottom: 0.1em #ddd solid;
 }
+body > footer {
+	color:#ccc;
+}
 @media print {
 	* {
 		color:#000;
