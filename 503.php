@@ -20,6 +20,11 @@
 		header > p {
 			font-size: 2em;
 		}
+		footer {
+			position:fixed;
+			bottom:-1.25rem;
+			right:0;"
+		} 
 		@media screen {
 			body {
 				background: #333 url('/wp-content/themes/draya/img/bg-1280.jpg') fixed 0 0;
@@ -49,8 +54,8 @@
 			<div id="content">			
 				<?php echo $this->mamo_template_tag_message(); ?>
 			</div>
-			<footer class="right">
-				<p id="admin"><?php echo str_replace('<a ', '<a class="tiny secondary button" ', $this->mamo_template_tag_login_logout()); ?></p>
+			<footer>
+				<?php echo str_replace('<a ', '<a class="tiny secondary button" ', $this->mamo_template_tag_login_logout()); ?>
 			</footer>
 		</div>
 	</div>
