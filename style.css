@@ -78,17 +78,8 @@ article.hyphenate {
 
 }
 body {
-	background: #333 url('img/pipe.jpg') fixed 0 0;
-	background-size:100%;
-}
-#main {
-	margin-top: 6em;
-	padding-bottom: 1.5em;
-	background-color: #FFF;
-}
-#main .sticky {
-	margin-bottom: 1.5rem;
-}
+	background-color: #333;
+}	
 article {
 	padding-bottom: 3em;
 	border-top: 0.1em #ddd solid;
@@ -99,6 +90,51 @@ body > footer {
 	background-color: #222;
 	color:#ccc;
 }
+#main {
+	background-color: rgb(255,255,255);
+}
+#main > .columns {
+	margin-top: 1.5rem;
+}
+.top-bar input{
+	height:auto;
+	padding-top:.35rem;
+	padding-bottom:.35rem;
+}
+@media screen and (orientation:portrait) {
+	body {
+	}
+}
+@media screen and (orientation:landscape) {
+	body {
+	}
+}
+@media screen and (min-width: 1025px) {
+	body {
+		background: #333 url('img/bg-1280.jpg') fixed 0 0;
+		background-size: 100%;
+	}	
+	#main {
+		margin-top: 6em;
+		padding-bottom: 1.5em;
+	}
+}
+@media screen and (min-width: 1281px) {
+	body {
+		background-image: url('img/bg-1920.jpg');
+	}
+}
+@media screen and (min-width: 1921px) {
+	body {
+		background-image: url('img/bg-2560.jpg');
+	}
+}
+@media screen and (min-width: 2561px) {
+	body {
+		background-image: url('img/bg-4096.jpg');
+	}
+}
+
 @media print {
 	* {
 		color:#000;
