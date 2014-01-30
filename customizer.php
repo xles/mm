@@ -12,7 +12,6 @@ function draya_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'post_display_username', array(
 		'transport'         => 'refresh',
 	) );
-
 	$wp_customize->add_control( 'post_display_username', array(
 		'label'   => 'Show author\'s username',
 		'section' => 'post_display_options',
@@ -23,9 +22,17 @@ function draya_customize_register( $wp_customize ) {
 		'default'         => true,
 		'transport'       => 'refresh',
 	) );
-
 	$wp_customize->add_control( 'post_display_hyphenation', array(
 		'label'   => 'Hyphenate posts',
+		'section' => 'post_display_options',
+		'type'    => 'checkbox',
+	) );
+
+	$wp_customize->add_setting( 'post_display_meta_on_bottom', array(
+		'transport'       => 'refresh',
+	) );
+	$wp_customize->add_control( 'post_display_meta_on_bottom', array(
+		'label'   => 'Display post metadata on bottom',
 		'section' => 'post_display_options',
 		'type'    => 'checkbox',
 	) );
