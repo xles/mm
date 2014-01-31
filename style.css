@@ -69,10 +69,10 @@ article.hyphenate {
 
 }
 .alignright {
-
+	float:right;
 }
 .alignleft {
-
+	float:left;
 }
 .aligncenter {
 
