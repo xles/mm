@@ -78,6 +78,30 @@ article.hyphenate {
 .aligncenter {
 
 }
+
+/*** Slide effect **/
+.has-slide {
+    display:inline-block;
+    width:auto;
+}
+.slide-wrapper, .slide-wrapper .slide {
+    display:inline-block;
+    line-height: normal;
+}
+.slide-wrapper {
+    white-space:nowrap;
+}
+.slide-wrapper .slide {
+    width:0%;
+    overflow:hidden;
+    vertical-align: text-bottom;
+    transition: width 0.2s ease-in-out;
+}
+.has-slide:hover .slide-wrapper .slide {
+    width:100%;
+}
+/*** End of slide effect **/
+
 body {
 	background-color: #333;
 }	
