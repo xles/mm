@@ -1,7 +1,11 @@
+<p class="right">
 <?php if( get_theme_mod( 'post_display_username' ) ) { ?>
-<!--
-	<span class="author vcard"><?php the_author_posts_link(); ?></span>
--->
-	<?php the_author_posts_link(); ?> | 
+	<i class="fi-torso"></i> 
+	<?php the_author_posts_link(); ?> &laquo; 
 <?php } ?> 
-<time datetime="<?php the_time("c"); ?>"><?php the_time( get_option( 'date_format' ) ); ?></span>
+<time datetime="<?php the_time("c"); ?>">
+	<i class="fi-clock"></i>
+	<?php the_time( get_option( 'date_format' ) ); ?>
+	<?php the_time(); ?>
+</time>
+</p>

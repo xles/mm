@@ -15,6 +15,7 @@ Draya WordPress Theme © 2014 xles
 @import url('https://fonts.googleapis.com/css?family=The+Girl+Next+Door');
 @import url('css/webicons-master/webicons.css');
 @import url('css/foundation-icons/foundation-icons.css');
+@import url('css/typography.css');
 p {
 	line-height: 1.5em;
 	margin:0;
