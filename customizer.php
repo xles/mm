@@ -36,6 +36,16 @@ function draya_customize_register( $wp_customize ) {
 		'section' => 'post_display_options',
 		'type'    => 'checkbox',
 	) );
+
+	$wp_customize->add_setting( 'post_display_no_of_pages', array(
+		'transport'       => 'refresh',
+		'default'       => '5'
+	) );
+	$wp_customize->add_control( 'post_display_no_of_pages', array(
+		'label'   => 'Number of pages in jump pagination',
+		'section' => 'post_display_options',
+		'type'    => 'text',
+	) );
 }
 add_action( 'customize_register', 'draya_customize_register' );
 

@@ -1,8 +1,8 @@
 <?php 
   global $wp_query; 
   $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-  $no_of_pages = 3;
-
+  $no_of_pages = get_theme_mod('post_display_no_of_pages');
+  
   if ( $wp_query->max_num_pages > 1 ) { 
 ?>
 
@@ -26,8 +26,6 @@
     <?php } ?>
 
 <?php
-//  $start_page = 2;
-//  $end_page = $wp_query->max_num_pages-1;
   $start_page = $paged - floor($no_of_pages/2);
   $end_page =   $paged + floor($no_of_pages/2);
 
