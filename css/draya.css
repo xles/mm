@@ -103,7 +103,7 @@ article.hyphenate {
 /*** End of slide effect **/
 
 body {
-	background-color: #333;
+	background-color: #39265A;
 }	
 article {
 	padding-bottom: 3em;
@@ -136,7 +136,7 @@ body > footer {
 }
 @media screen and (min-width: 1025px) {
 	body {
-		background: #333 url('../img/bg-1280.jpg') fixed 0 0;
+		background: #39265A url('../img/bg-1280.jpg') fixed 0 0;
 		background-size: 100%;
 	}	
 	#main {
