@@ -13,9 +13,9 @@ Text Domain: draya
 Draya WordPress Theme © 2014 xles
 */
 @import url('https://fonts.googleapis.com/css?family=The+Girl+Next+Door');
-@import url('css/webicons-master/webicons.css');
-@import url('css/foundation-icons/foundation-icons.css');
-@import url('css/typography.css');
+@import url('webicons-master/webicons.css');
+@import url('foundation-icons/foundation-icons.css');
+@import url('typography.css');
 p {
 	line-height: 1.5em;
 	margin:0;
@@ -136,7 +136,7 @@ body > footer {
 }
 @media screen and (min-width: 1025px) {
 	body {
-		background: #333 url('img/bg-1280.jpg') fixed 0 0;
+		background: #333 url('../img/bg-1280.jpg') fixed 0 0;
 		background-size: 100%;
 	}	
 	#main {
@@ -146,17 +146,17 @@ body > footer {
 }
 @media screen and (min-width: 1281px) {
 	body {
-		background-image: url('img/bg-1920.jpg');
+		background-image: url('../img/bg-1920.jpg');
 	}
 }
 @media screen and (min-width: 1921px) {
 	body {
-		background-image: url('img/bg-2560.jpg');
+		background-image: url('../img/bg-2560.jpg');
 	}
 }
 @media screen and (min-width: 2561px) {
 	body {
-		background-image: url('img/bg-4096.jpg');
+		background-image: url('../img/bg-4096.jpg');
 	}
 }
 

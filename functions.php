@@ -92,8 +92,8 @@ add_filter('stylesheet_uri','wpi_stylesheet_uri',10,2);
 
 function wpi_stylesheet_uri($stylesheet_uri, $stylesheet_dir_uri)
 {
-    return $stylesheet_dir_uri.'/style.css';
-    //return $stylesheet_dir_uri.'/css/style.css';
+    //return $stylesheet_dir_uri.'/style.css';
+    return $stylesheet_dir_uri.'/css/draya.css';
 }
 
 function stick_admin_bar_to_bottom_css() {
