@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<section id="content" role="main">
+<main id="content" role="main">
 <header class="header">
 <h1 class="entry-title"><?php 
 if ( is_day() ) { printf( __( 'Daily Archives: %s', 'draya' ), get_the_time( get_option( 'date_format' ) ) ); }
@@ -12,7 +12,7 @@ else { _e( 'Archives', 'draya' ); }
 <?php get_template_part( 'entry' ); ?>
 <?php endwhile; endif; ?>
 <?php get_template_part( 'nav', 'below' ); ?>
-</section>
+</main>
 
 </div>
 <div class="large-3 columns">
