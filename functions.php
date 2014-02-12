@@ -94,6 +94,18 @@ function wpi_stylesheet_uri($stylesheet_uri, $stylesheet_dir_uri)
 {
     //return $stylesheet_dir_uri.'/style.css';
     return $stylesheet_dir_uri.'/css/draya.css';
+
+}
+add_filter('next_post_link', 'next_link_attributes');
+add_filter('previous_post_link', 'prev_link_attributes');
+ 
+function next_link_attributes($output) {
+    $code = 'class="right small secondary button"';
+    return str_replace('<a href=', '<a '.$code.' href=', $output);
+}
+function prev_link_attributes($output) {
+    $code = 'class="left small secondary button"';
+    return str_replace('<a href=', '<a '.$code.' href=', $output);
 }
 
 function stick_admin_bar_to_bottom_css() {
