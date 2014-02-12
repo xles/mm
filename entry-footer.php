@@ -22,10 +22,24 @@ if ( comments_open() ) {
 echo $comment;
 ?>
 <br>
+<i class="fi-pricetag-multiple"></i>
 <?php
-the_tags('<i class="fi-pricetag-multiple"></i> <span class="secondary radius label">',
+/*
+the_tags('<span class="secondary radius label">',
 	'</span> <span class="secondary radius label">',
+
 	'</span>'); 
+*/
+
+$posttags = get_the_tags();
+if ($posttags) {
+	foreach ($posttags as $tag) {
+		echo '<a href="' . home_url('/tag/' . $tag->slug)
+		.'" title="'.$tag->description
+		.'" class="secondary radius label" rel="tag">' 
+		. $tag->name . "</a>\n";
+	}
+}
 ?>
 </p>
 </footer> 
