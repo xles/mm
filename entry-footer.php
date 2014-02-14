@@ -22,11 +22,10 @@ if ( comments_open() ) {
 echo $comment;
 ?>
 <br>
-<i class="fi-pricetag-multiple"></i>
 <?php
-
 $posttags = get_the_tags();
 if ($posttags) {
+	echo '<i class="fi-pricetag-multiple"></i>';
 	foreach ($posttags as $tag) {
 		echo '<a href="' . home_url('/tag/' . $tag->slug)
 		.'" title="'.$tag->description

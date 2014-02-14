@@ -9,11 +9,11 @@ if( get_theme_mod( 'post_display_hyphenation' ) ) {
 <article id="post-<?php the_ID(); ?>" <?php post_class($hyphenate); ?>>
 	<header>
 		<?php if ( !is_search() ) get_template_part( 'entry', 'meta' ); ?>
-		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark">
-			<h1 class="entry-title">
+		<h1>
+			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark">
 				<?php the_title(); ?>
-			</h1>
-		</a>
+			</a>
+		</h1>
 
 	</header>
 
