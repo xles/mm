@@ -100,12 +100,12 @@ add_filter('next_post_link', 'next_link_attributes');
 add_filter('previous_post_link', 'prev_link_attributes');
  
 function next_link_attributes($output) {
-    $code = 'class="right small secondary button"';
-    return str_replace('<a href=', '<a '.$code.' href=', $output);
+    $attr = 'class="right small secondary button"';
+    return str_replace('<a href=', '<a '.$attr.' href=', $output);
 }
 function prev_link_attributes($output) {
-    $code = 'class="left small secondary button"';
-    return str_replace('<a href=', '<a '.$code.' href=', $output);
+    $attr = 'class="left small secondary button"';
+    return str_replace('<a href=', '<a '.$attr.' href=', $output);
 }
 
 function stick_admin_bar_to_bottom_css() {
