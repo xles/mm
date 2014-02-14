@@ -9,7 +9,7 @@
 <?php if ( ! post_password_required() ) comments_template( '', true ); ?>
 <?php endwhile; endif; ?>
 </div>
-<div class="large-3 columns">
+<div class="large-3 columns sidebar">
 <?php get_sidebar(); ?>
 </div>
 <?php get_footer(); ?>

@@ -8,7 +8,7 @@ if( get_theme_mod( 'post_display_hyphenation' ) ) {
 
 <article id="post-<?php the_ID(); ?>" <?php post_class($hyphenate); ?>>
 	<header>
-		<?php if ( !is_search() ) get_template_part( 'entry', 'meta' ); ?>
+		<?php if ( !is_search() && !is_404() ) get_template_part( 'entry', 'meta' ); ?>
 		<h1>
 			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark">
 				<?php the_title(); ?>
@@ -17,6 +17,6 @@ if( get_theme_mod( 'post_display_hyphenation' ) ) {
 
 	</header>
 
-	<?php get_template_part( 'entry', ( is_archive() || is_search() ? 'summary' : 'content' ) ); ?>
-	<?php if ( !is_search() ) get_template_part( 'entry-footer' ); ?>
+	<?php get_template_part( 'entry', ( is_archive() || is_search() || is_404() ? 'summary' : 'content' ) ); ?>
+	<?php if ( !is_search() && !is_404() ) get_template_part( 'entry-footer' ); ?>
 </article>

@@ -12,7 +12,7 @@
 <?php get_template_part( 'nav', 'below' ); ?>
 </section>
 </div>
-<div class="large-3 columns">
+<div class="large-3 columns sidebar">
 <?php get_sidebar(); ?>
 </div>
 <?php get_footer(); ?>

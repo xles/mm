@@ -1,12 +1,40 @@
 <?php get_header(); ?>
 <main id="content" role="main">
-<header class="header">
-<h1 class="entry-title"><?php 
-if ( is_day() ) { printf( __( 'Daily Archives: %s', 'draya' ), get_the_time( get_option( 'date_format' ) ) ); }
-elseif ( is_month() ) { printf( __( 'Monthly Archives: %s', 'draya' ), get_the_time( 'F Y' ) ); }
-elseif ( is_year() ) { printf( __( 'Yearly Archives: %s', 'draya' ), get_the_time( 'Y' ) ); }
-else { _e( 'Archives', 'draya' ); }
-?></h1>
+<header>
+
+
+<ul class="breadcrumbs">
+  <li><a href="/archive/">Archive</a></li>
+
+<?php 
+$link = '/';
+if ( is_year() || is_month() || is_day()) { 
+	$link .= get_the_time( 'Y' ).'/';
+	if (is_year()) {
+		echo '<li class="current">'.get_the_time( 'Y' ).'</li>';
+	} else {
+		echo '<li><a href="'.$link.'">'.get_the_time( 'Y' ).'</a></li>';
+	}
+} 
+if ( is_month() || is_day()) { 
+	$link .= get_the_time( 'm' ).'/';
+	if (is_month()) {
+		echo '<li class="current">'.get_the_time( 'F' ).'</li>';
+	} else {
+		echo '<li><a href="'.$link.'">'.get_the_time( 'F' ).'</a></li>';
+	}
+}
+if ( is_day() ) { 
+	$link .= get_the_time( 'd' ).'/';
+	if (is_day()) {
+		echo '<li class="current">'.get_the_time( 'd' ).'</li>';
+	} else {
+		echo '<li><a href="'.$link.'">'.get_the_time( 'd' ).'</a></li>';
+	}
+}
+?>
+</ul>
+
 </header>
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 <?php get_template_part( 'entry' ); ?>
@@ -15,7 +43,7 @@ else { _e( 'Archives', 'draya' ); }
 </main>
 
 </div>
-<div class="large-3 columns">
+<div class="large-3 columns sidebar">
 <?php get_sidebar(); ?>
 </div>
 <?php get_footer(); ?>
