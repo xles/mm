@@ -14,6 +14,7 @@ article.hyphenate {
 }
 #site-title, #site-description {
 	font-family: 'The Girl Next Door', cursive;
+	color: #39265A;
 	text-align: right;
 }
 #site-title {
@@ -93,6 +94,10 @@ body {
 }	
 article {
 	padding-bottom: 3em;
+}
+article > header > h1 {
+	text-align: center;
+	clear: both;
 	border-top: 0.1em #ddd solid;
 }
 body > footer {
