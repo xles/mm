@@ -24,12 +24,6 @@ echo $comment;
 <br>
 <i class="fi-pricetag-multiple"></i>
 <?php
-/*
-the_tags('<span class="secondary radius label">',
-	'</span> <span class="secondary radius label">',
-
-	'</span>'); 
-*/
 
 $posttags = get_the_tags();
 if ($posttags) {
