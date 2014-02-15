@@ -63,6 +63,10 @@ p + p {
 
 }
 
+#comments {
+	clear:both;
+}
+
 .sidebar {
 	top: 3rem;
 }
