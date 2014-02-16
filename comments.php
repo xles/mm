@@ -14,7 +14,7 @@ if ( ! empty( $comments_by_type['comment'] ) ) :
 </nav>
 <?php endif; ?>
 <ul>
-<?php wp_list_comments( 'type=comment' ); ?>
+<?php wp_list_comments( 'type=comment&callback=comment_callback' ); ?>
 </ul>
 <?php if ( get_comment_pages_count() > 1 ) : ?>
 <nav id="comments-nav-below" class="comments-navigation" role="navigation">
@@ -36,6 +36,8 @@ $ping_count = count( $comments_by_type['pings'] );
 <?php 
 endif; 
 endif;
-if ( comments_open() ) comment_form();
+if ( comments_open() ) get_template_part( 'comment-form' );
+
+
 ?>
 </div>
