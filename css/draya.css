@@ -2,6 +2,7 @@
 @import url('webicons-master/webicons.css');
 @import url('foundation-icons/foundation-icons.css');
 @import url('typography.css');
+@import url('comments.css');
 p {
 	line-height: 1.5em;
 	margin:0;

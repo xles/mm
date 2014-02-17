@@ -1,0 +1,178 @@
+/* Comment list */
+#comments-list .reply {}
+#comments-list .reply:hover a {
+	background-color: #007095;
+}
+.comment-edit-link:hover {
+	background-color: #B9B9B9;
+	color: #333;
+}
+.comment-edit-link {
+	background-color: #E7E7E7;
+	border-color: #B9B9B9;
+	color: #333;
+	top:-0.75rem;
+}
+#comments-list .reply a {
+	background-color: #008CBA;
+	border-color: #007095;
+	color: #FFF;
+	top:-1.35rem;
+}
+#comments-list .reply a, .comment-edit-link {
+	border-style: solid;
+	border-width: 0px;
+	cursor: pointer;
+	font-family: "Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
+	font-weight: normal;
+	line-height: normal;
+	position: relative;
+	right:-0.75rem;
+	text-decoration: none;
+	text-align: center;
+	display: inline-block;
+	padding-top: 0.625rem;
+	padding-right: 1.25rem;
+	padding-bottom: 0.6875rem;
+	padding-left: 1.25rem;
+	font-size: 0.6875rem;
+	-webkit-transition: background-color 300ms ease-out;
+	-moz-transition: background-color 300ms ease-out;
+	transition: background-color 300ms ease-out;
+	-webkit-appearance: none;
+	border: none;
+	font-weight: normal !important;
+	float:right;
+	width: 5rem;
+}
+
+#comments-list .alt {}
+#comments-list .odd {}
+#comments-list .even {}
+#comments-list .thread-alt {}
+#comments-list .thread-odd {}
+#comments-list .thread-even {}
+#comments-list li ul.children .alt {}
+#comments-list li ul.children .odd {}
+#comments-list li ul.children .even {}
+
+#comments-list .vcard {
+	display: inline;
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+#comments-list .vcard cite.fn {
+	font-weight: normal;
+	font-style: normal;
+	font-size: 1rem;
+}
+#comments-list .vcard span.says {
+	display: none;
+}
+#comments-list .vcard img.photo {}
+#comments-list .vcard img.avatar {
+	float: left;
+	margin-right: 1rem;
+	border-radius: 50%;
+	transition: border-radius 300ms ease-out;
+}
+#comments-list .vcard img.avatar:hover {
+	border-radius: 0;
+}
+#comments-list .vcard cite.fn a.url {}
+
+#comments-list .comment-meta:before,
+#comments-list .comment-author:before {
+	font-family: "foundation-icons";
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	display: inline-block;
+	text-decoration: inherit;
+}
+#comments-list .comment-meta:before {
+	content: "\f12b";
+}
+#comments-list .comment-meta {
+	display: inline;
+} 
+#comments-list .comment-meta a {}
+#comments-list .commentmetadata {}
+#comments-list .commentmetadata a {}
+
+#comments-list .parent {}
+#comments-list .comment {}
+#comments-list .children {}
+#comments-list .pingback {}
+#comments-list .bypostauthor {}
+#comments-list .comment-author:before {
+	content: "\f1fe";
+}
+#comments-list .comment-author {}
+#comments-list .comment-author:after {
+	content:"\00AB";
+}
+#comments-list .comment-author-admin {}
+
+#comments-list {}
+#comments-list ul {
+	padding: 0;
+	margin: 0;
+}
+#comments-list li {
+	list-style: none;
+	margin-bottom: 1.5rem;
+}
+#comments-list .comment-body:hover {
+	border-left: 0.5rem solid #007095;
+}
+#comments-list .comment-body {
+	transition: border-left 300ms ease-out;
+	border-left: 0.5rem solid #008CBA;
+	background-color: #F2F2F2;
+	padding:0.75rem;
+	padding-left:1.25rem;
+}
+#comments-list .comment-body p {
+	padding-top:0.5rem;
+	padding-right:5.75rem;
+	clear:both;
+}
+#comments-list li ul {
+	padding-left: 1rem;
+	padding-top: 1.5rem;
+	border-left: 0.5rem solid #008CBA;
+}
+#comments-list li ul.children li {}
+#comments-list li ul.children li.alt {}
+#comments-list li ul.children li.byuser {}
+#comments-list li ul.children li.comment {}
+#comments-list li ul.children li.depth-{id} {}
+#comments-list li ul.children li.bypostauthor {}
+#comments-list li ul.children li.comment-author-admin {}
+
+#cancel-comment-reply {}
+#cancel-comment-reply a {}
+
+/* Comment form */
+#respond { } 
+#reply-title { } 
+#cancel-comment-reply-link { }
+#commentform { } 
+#author { } 
+#email { } 
+#url { } 
+#comment 
+#submit
+.comment-notes { } 
+.required { }
+.comment-form-author { }
+.comment-form-email { } 
+.comment-form-url { }
+.comment-form-comment { } 
+.form-allowed-tags { } 
+.form-submit
