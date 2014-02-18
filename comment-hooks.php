@@ -29,13 +29,34 @@ function draya_comment_form_top() {
 </form>
 */
 }
-add_action('comment_form', 'bootstrap3_comment_button' );
-function bootstrap3_comment_button() {
+function cancel_comment_reply_button($html, $link, $text) {
+    $style = isset($_GET['replytocom']) ? '' : ' style="display:none;"';
+    $button = '<button id="cancel-comment-reply-link" class="tiny secondary button radius"' . $style . '>';
+    return $button . $text . '</button>';
 }
-
+ 
+add_filter( 'cancel_comment_reply_link', '__return_false' );
+add_action('cancel_comment_reply_link', 'cancel_comment_reply_button', 10, 3);
 function draya_comment_form_bottom() {
-	echo '<button class="button" type="submit">' . __( 'Submit' ) . '</button>';
-	echo '</fieldset>';
+	function f($data) { return $data; } $f = 'f';
+
+	$html = <<<HTML
+		<div class="row">
+			<div class="small-9 small-offset-3 columns">
+				<button class="radius button" type="submit">{$f(__( 'Post Comment' ))}</button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="small-12 columns">
+				<p>
+					{$f(__('You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:' ))}
+					<code>{$f(allowed_tags())}</code>
+				</p>
+			</div>
+		</div>
+	</fieldset>
+HTML;
+	echo $html;
 }
 
 
@@ -46,7 +67,11 @@ function draya_comment_form_defaults($args) {
 	function fn($data) { return $data; } $fn = 'fn';
 	$user = wp_get_current_user();
 
-	$args['format']           = 'html5';
+	$commenter = wp_get_current_commenter();
+	$req = get_option( 'require_name_email' );
+	$aria_req = ( $req ? " aria-required='true'" : '' );
+
+	$args['format']            = 'html5';
 	$args['id_form']           = 'commentform';
 	$args['id_submit']         = 'submit';
 	$args['title_reply']       = null;
@@ -64,25 +89,36 @@ function draya_comment_form_defaults($args) {
 HTML;
 
 	$args['logged_in_as'] = <<<HTML
-		<p class="logged-in-as">
-			{$fn(__( 'Logged in as'))}
-			<a href="{$fn(admin_url( 'profile.php' ))}">{$user->display_name}</a>.
-			<a href="{$fn(wp_logout_url( apply_filters( 'the_permalink', get_permalink(  ) ) ))}" 
-				title="{$fn(__('Log out of this account'))}">
-				{$fn(__('Log out?'))}
-			</a>
-		</p>
+		<div class="row">
+			<div class="small-9 small-offset-3 columns">
+				<p style="height: 2.3125rem">
+					{$fn(__( 'Logged in as'))}
+					<a href="{$fn(admin_url( 'profile.php' ))}">{$user->display_name}</a>.
+					<a href="{$fn(wp_logout_url( apply_filters( 'the_permalink', get_permalink(  ) ) ))}" 
+						title="{$fn(__('Log out of this account'))}">
+						{$fn(__('Log out?'))}
+					</a>
+				</p>
+			</div>
+		</div>
 HTML;
 
-	$args['comment_notes_before'] = '<p class="comment-notes">' .
-		__( 'Your email address will not be published.' ) . ( $req ? $required_text : '' ) .
-		'</p>';
+	$args['comment_notes_before'] = <<<HTML
+		<div class="row">
+			<div class="small-9 small-offset-3 columns">
+				<p style="height: 2.3125rem">
+					{$fn(__( 'Your email address will not be published.' ) . ( $req ? $required_text : '' ))}
+				</p>
+			</div>
+		</div>
+HTML;
 
-	$args['comment_notes_after'] = '<p class="form-allowed-tags">' .
-		sprintf(
-			__( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s' ),
-			' <code>' . allowed_tags() . '</code>'
-		) . '</p>';
+	$args['comment_notes_after'] = null;
+#	$args['comment_notes_after'] = '<p class="form-allowed-tags">' .
+#		sprintf(
+#			__( 'You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes: %s' ),
+#			' <code>' . allowed_tags() . '</code>'
+#		) . '</p>';
 
 	$args['comment_field'] = <<<HTML
 		<div class="row">
@@ -92,18 +128,19 @@ HTML;
 				</label>
 			</div>
 			<div class="small-9 columns">
-				<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true">
-				</textarea>
+				<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>
 			</div>
 		</div>
 HTML;
+
+	$fields = array();
 
 	$fields['author'] = <<<HTML
 		<div class="row">
 			<div class="small-3 columns">
 				<label for="author" class="right inline">
+					{$fn( $req ? '<small>Required</small>' : '' )}
 					{$fn(__( 'Name', 'domainreference' ))}
-					{$fn( $req ? '<span class="required">*</span>' : '' )}
 				</label>
 			</div>
 			<div class="small-9 columns">
@@ -117,8 +154,8 @@ HTML;
 		<div class="row">
 			<div class="small-3 columns">
 				<label for="email" class="right inline">
+					{$fn( $req ? '<small>Required</small>' : '' )}
 					{$fn(__( 'Email', 'domainreference' ))}
-					{$fn( $req ? '<span class="required">*</span>' : '' )}
 				</label>
 			</div>
 			<div class="small-9 columns">
@@ -142,7 +179,7 @@ HTML;
 		</div>
 HTML;
 
-	$args['fields'] = apply_filters( 'comment_form_default_fields', $fileds);
+	$args['fields'] = apply_filters( 'comment_form_default_fields', $fields);
 
 	return $args;
 }
