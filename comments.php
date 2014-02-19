@@ -1,5 +1,5 @@
 <?php if ( 'comments.php' == basename( $_SERVER['SCRIPT_FILENAME'] ) ) return; ?>
-<div id="comments">
+<div id="comments" class="hide-for-print">
 <?php 
 if ( have_comments() ) : 
 global $comments_by_type;
@@ -14,7 +14,8 @@ if ( ! empty( $comments_by_type['comment'] ) ) :
 </nav>
 <?php endif; ?>
 <ul>
-<?php wp_list_comments( 'type=comment&callback=comment_callback' ); ?>
+<?php wp_list_comments( 'type=comment&callback=html5_comment' ); ?>
+<?php #wp_list_comments( 'type=comment&callback=comment_callback' ); ?>
 <?php #wp_list_comments( 'type=comment' ); ?>
 </ul>
 <?php if ( get_comment_pages_count() > 1 ) : ?>
