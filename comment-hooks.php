@@ -1,8 +1,12 @@
 <?php
+function fn($data) { return $data; }
+
 add_action( 'comment_form_top', 'draya_comment_form_top' );
 add_action( 'comment_form', 'draya_comment_form_bottom' );
 #add_action( 'comment_form_comments_closed', 'draya_comments_closed' );
 #add_action( 'comment_form_comments_closed', 'draya_comments_closed' );
+
+
 
 function draya_comment_form_top() {
 	echo '<fieldset>
@@ -20,19 +24,19 @@ function cancel_comment_reply_button($html, $link, $text) {
 add_filter( 'cancel_comment_reply_link', '__return_false' );
 add_action('cancel_comment_reply_link', 'cancel_comment_reply_button', 10, 3);
 function draya_comment_form_bottom() {
-	function f($data) { return $data; } $f = 'f';
+	$fn = 'fn';
 
 	$html = <<<HTML
 		<div class="row">
 			<div class="small-9 small-offset-3 columns">
-				<button class="radius button" type="submit">{$f(__( 'Post Comment' ))}</button>
+				<button class="radius button" type="submit">{$fn(__( 'Post Comment' ))}</button>
 			</div>
 		</div>
 		<div class="row">
 			<div class="small-12 columns">
-				<p>
-					{$f(__('You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:' ))}
-					<code>{$f(allowed_tags())}</code>
+				<p class="allowed-tags">
+					{$fn(__('You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:' ))}
+					<code>{$fn(allowed_tags())}</code>
 				</p>
 			</div>
 		</div>
@@ -45,8 +49,7 @@ HTML;
 add_filter( 'comment_form_defaults', 'draya_comment_form_defaults');
  
 function draya_comment_form_defaults($args) {
-
-	function fn($data) { return $data; } $fn = 'fn';
+	$fn = 'fn';
 	$user = wp_get_current_user();
 
 	$commenter = wp_get_current_commenter();
@@ -167,7 +170,76 @@ HTML;
 }
 
 
-function comment_callback( $comment, $depth, $args ) {
+#function comment_callback($comment, $args, $depth) {
+function html5_comment($comment, $args, $depth) {
+	$fn = 'fn';
+	$GLOBALS['comment'] = $comment;
+	$tag = ( 'div' === $args['style'] ) ? 'div' : 'li';
+	$post = get_post();
+
+	$avatar = ''; 
+	$args['avatar_size'] = 96;
+	if ($args['avatar_size'] != 0) 
+		$avatar = get_avatar( $comment, $args['avatar_size'] );
+	
+	$reply_link = '';
+	$reply_link = preg_replace( '/comment-reply-link/',
+		'comment-reply-link small secondary radius button right',
+		get_comment_reply_link( 
+			array_merge( $args, array( 
+				'add_below' => 'div-comment', 
+				'depth' => $depth, 
+				'max_depth' => $args['max_depth'] 
+				) 
+			) 
+		), 1 );
+
+	$moderation = '';
+	if ($comment->comment_approved == '0')
+		$moderation = __('&laquo; Your comment is awaiting moderation.');
+	
+	$comment_class = '';
+	foreach (get_comment_class( empty( $args['has_children'] ) ? '' : 'parent' ) as $class) {
+		$comment_class .= $class.' ';
+	}
+
+	$html = "<$tag id=\"comment-{$fn(get_comment_ID())}\" class=\"{$comment_class}\">";
+	$html .= <<<HTML
+	<div class="panel" id="div-comment-{$fn(get_comment_ID())}">
+		<div class="row">
+			<div class="small-12 columns">
+				{$avatar}
+				<a href="{$fn(get_edit_comment_link())}" class="tiny secondary radius button right">{$fn(__( 'Edit' ))}</a>
+				<p class="meta">
+					<i class="fi-clock"></i>
+					<a href="{$fn(esc_url(get_comment_link($comment->comment_ID)))}">
+						<time datetime="{$fn(get_comment_time('c'))}">
+							{$fn(get_comment_date())} at {$fn(get_comment_time())}
+						</time>
+					</a>
+					<br>
+					<i class="fi-torso"></i> 
+					{$fn(get_comment_author_link())}
+					{$moderation}
+				</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="small-10 columns">
+				<p>{$fn(get_comment_text())}</p>
+			</div>
+
+			<div class="small-2 columns">
+				{$reply_link}
+			</div>
+		</div>
+	</div>
+HTML;
+	echo $html;
+}
+
+#function html5_comment($comment, $args, $depth) {
+function comment_callback($comment, $args, $depth) {
 	if ( 'div' == $args['style'] ) {
 		$tag = 'div';
 		$add_below = 'comment';
