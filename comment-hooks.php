@@ -10,24 +10,6 @@ function draya_comment_form_top() {
 		';comment_form_title( 'Leave a Reply', 'Leave a Reply to %s' );
 		echo '
 	</legend>';
-/*
-<form>
-  <div class="row">
-    <div class="small-8">
-
-      <div class="row">
-        <div class="small-3 columns">
-          <label for="right-label" class="right inline">Label</label>
-        </div>
-        <div class="small-9 columns">
-          <input type="text" id="right-label" placeholder="Inline Text Input">
-        </div>
-      </div>
-
-    </div>
-  </div>
-</form>
-*/
 }
 function cancel_comment_reply_button($html, $link, $text) {
     $style = isset($_GET['replytocom']) ? '' : ' style="display:none;"';
