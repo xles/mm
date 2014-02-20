@@ -40,7 +40,7 @@
           <div class="large-9 columns" role="content">
             <div class="row">
               <div class="large-12 columns">
-                <header>
+                <header class="hide-for-print">
       			      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php esc_attr_e( get_bloginfo( 'name' ), 'draya' ); ?>" rel="home">
       	            <p id="site-title">
       	              <?php echo esc_html( get_bloginfo( 'name' ) ); ?>

@@ -135,6 +135,11 @@ body > footer {
 	}
 }
 
+@media screen {
+	.show-for-print {
+		display: none !important;
+	}
+}
 @media print {
 	* {
 		color:#000;

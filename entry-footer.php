@@ -1,4 +1,4 @@
-<footer>
+<footer class="hide-for-print">
 <p>
 	<i class="fi-folder"></i>
 	<?php the_category( ', ' ); ?>
