@@ -36,6 +36,9 @@ p + p {
 	padding-bottom: 1.5rem;
 	border-bottom: 0.1rem #ddd solid;
 }
+ul.wpp-list {
+	margin-left: 0;
+}
 .clear {
 	clear:both;
 }
