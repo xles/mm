@@ -1,0 +1,16 @@
+{
+  "name": "draya",
+  "version": "0.0.0",
+  "description": "Wordpress theme for Draya.",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-jshint": "~0.8.0"
+  },
+  "devDependencies": {
+    "grunt-contrib-cssmin": "~0.8.0",
+    "grunt-contrib-uglify": "~0.3.2"
+  },
+  "author": "xles",
+  "license": "Copyright"
+}
