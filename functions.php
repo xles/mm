@@ -94,7 +94,7 @@ add_filter('stylesheet_uri','wpi_stylesheet_uri',10,2);
 function wpi_stylesheet_uri($stylesheet_uri, $stylesheet_dir_uri)
 {
 		//return $stylesheet_dir_uri.'/style.css';
-		return $stylesheet_dir_uri.'/css/draya.css';
+		return $stylesheet_dir_uri.'/css/draya.min.css';
 
 }
 add_filter('next_post_link', 'next_link_attributes');
