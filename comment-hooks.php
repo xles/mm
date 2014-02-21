@@ -54,7 +54,7 @@ function draya_comment_form_defaults($args) {
 
 	$commenter = wp_get_current_commenter();
 	$req = get_option( 'require_name_email' );
-	$aria_req = ( $req ? " aria-required='true'" : '' );
+	$aria_req = ( $req ? ' aria-required="true" ' : '' );
 
 	$args['format']            = 'html5';
 	$args['id_form']           = 'commentform';
@@ -145,7 +145,7 @@ HTML;
 			</div>
 			<div class="small-9 columns">
 				<input id="email" name="email" type="text" 
-				value="{$fn(esc_attr(  $commenter['comment_author_email'] ))}" size="30" ($aria_req) />
+				value="{$fn(esc_attr(  $commenter['comment_author_email'] ))}" size="30" {$aria_req} />
 			</div>
 		</div>
 HTML;

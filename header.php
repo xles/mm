@@ -8,8 +8,7 @@
   
   <meta name="description" content="Draya's awesome blog thing.">
   
-  <meta name="author" content="ZURB, inc. ZURB network also includes zurb.com">
-  <meta name="copyright" content="ZURB, inc. Copyright (c) 2013">
+  <meta name="author" content="Marti">
 
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/foundation/5.1.1/css/foundation.min.css">
   <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
@@ -28,19 +27,24 @@
               </ul>
 
               <section class="top-bar-section">
-                <ul class="left">
-                  <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
-                </ul>
+                <?php
+                  $menu_args = array(
+                    'theme_location' => 'main-menu',
+                    'container' => false,
+                    'menu_class' => 'left'
+                  );
+                  wp_nav_menu($menu_args); 
+                ?>
                 <ul class="right">
                   <?php get_search_form(); ?>
                 </ul>
               </section>
             </nav>
           </div>
-          <div class="large-9 columns" role="content">
+          <div class="large-9 columns">
             <div class="row">
               <div class="large-12 columns">
-                <header class="hide-for-print">
+                <header class="hide-for-print" role="banner">
       			      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php esc_attr_e( get_bloginfo( 'name' ), 'draya' ); ?>" rel="home">
       	            <p id="site-title">
       	              <?php echo esc_html( get_bloginfo( 'name' ) ); ?>
