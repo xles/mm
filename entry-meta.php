@@ -5,7 +5,7 @@
 <?php } ?> 
 <time datetime="<?php the_time("c"); ?>">
 	<i class="fi-clock"></i>
-	<?php the_time( get_option( 'date_format' ) ); ?>
+	<?php the_time( get_option( 'date_format' ) ); ?> 
 	<?php the_time(); ?>
 </time>
 </p>

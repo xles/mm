@@ -3,6 +3,10 @@
       <?php 
         echo sprintf( __( '%1$s %2$s %3$s. All Rights Reserved.', 'draya' ), '&copy;', date( 'Y' ), esc_html( get_bloginfo( 'name' ) ) ); 
       ?>
+      <!--
+      Site design and theme development by [xles](http://blankflank.se/), 
+        using [Zurb Foundation](http://foundation.zurb.com/)
+      -->
   </footer>
   <?php wp_footer(); ?>
   <script src="//cdn.jsdelivr.net/foundation/5.1.1/js/vendor/jquery.js"></script>

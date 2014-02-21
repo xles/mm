@@ -14,6 +14,11 @@
   <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
   <script src="//cdn.jsdelivr.net/foundation/5.1.1/js/vendor/modernizr.js"></script>
   <?php wp_head(); ?>
+  <style>
+    #wpadminbar .quicklinks .menupop ul {
+      bottom: 0;
+    }
+</style>
 </head>
 <body <?php body_class(); ?>>
   <div class="row" id="main">
