@@ -5,10 +5,10 @@
       ?>
   </footer>
   <?php wp_footer(); ?>
-  <script src="//cdn.jsdelivr.net/foundation/5.0.3/js/vendor/jquery.js"></script>
-  <script src="//cdn.jsdelivr.net/foundation/5.0.3/js/foundation.min.js"></script>
-  <script src="//cdn.jsdelivr.net/foundation/5.0.3/js/foundation/foundation.topbar.js"></script>
-  <script src="<?php echo get_template_directory_uri(); ?>/js/Hyphenator.js"></script>
+  <script src="//cdn.jsdelivr.net/foundation/5.1.1/js/vendor/jquery.js"></script>
+  <script src="//cdn.jsdelivr.net/foundation/5.1.1/js/foundation.min.js"></script>
+  <script src="//cdn.jsdelivr.net/foundation/5.1.1/js/foundation/foundation.topbar.js"></script>
+  <script src="<?php echo get_template_directory_uri(); ?>/js/Hyphenator.min.js"></script>
   <script>
     $(document).foundation();
     Hyphenator.run();

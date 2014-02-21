@@ -11,9 +11,9 @@
   <meta name="author" content="ZURB, inc. ZURB network also includes zurb.com">
   <meta name="copyright" content="ZURB, inc. Copyright (c) 2013">
 
-  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/foundation/5.0.3/css/foundation.min.css">
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/foundation/5.1.1/css/foundation.min.css">
   <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
-  <script src="//cdn.jsdelivr.net/foundation/5.0.3/js/vendor/modernizr.js"></script>
+  <script src="//cdn.jsdelivr.net/foundation/5.1.1/js/vendor/modernizr.js"></script>
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
