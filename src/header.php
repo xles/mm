@@ -6,7 +6,7 @@
 
   <title><?php wp_title( ' | ', true, 'right' ); ?></title>
   
-  <meta name="description" content="Draya's awesome blog thing.">
+  <meta name="description" content="<?php bloginfo( 'description' ); ?>">
   
   <meta name="author" content="Marti">
 
