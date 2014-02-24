@@ -22,7 +22,7 @@
 </head>
 <body <?php body_class(); ?>>
   <div class="row" id="main">
-          <div class="contain-to-grid sticky">
+          <div class="contain-to-grid sticky hide-for-print">
             <nav class="top-bar" data-topbar>
               <ul class="title-area">
                 <li class="name">

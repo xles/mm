@@ -159,6 +159,8 @@ body > footer {
 	}
 	p + p {
 		text-indent: 1.5em;
+		margin-top: 0;
+		margin-bottom: 0;
 	}
 	@page {
 	
