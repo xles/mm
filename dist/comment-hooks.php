@@ -6,6 +6,7 @@ add_action( 'comment_form', 'draya_comment_form_bottom' );
 #add_action( 'comment_form_comments_closed', 'draya_comments_closed' );
 #add_action( 'comment_form_comments_closed', 'draya_comments_closed' );
 
+add_filter( 'comment_text', 'wpautop',            30 );
 
 
 function draya_comment_form_top() {
@@ -201,6 +202,9 @@ function foundation_comment($comment, $args, $depth) {
 		$comment_class .= $class.' ';
 	}
 
+	$comment_text = wpautop(get_comment_text());
+//	$comment_text = get_comment_text();
+
 	$html = "<$tag id=\"comment-{$fn(get_comment_ID())}\" class=\"{$comment_class}\">";
 	$html .= <<<HTML
 	<div class="panel" id="div-comment-{$fn(get_comment_ID())}">
@@ -224,7 +228,7 @@ function foundation_comment($comment, $args, $depth) {
 		</div>
 		<div class="row">
 			<div class="small-10 columns">
-				<p>{$fn(get_comment_text())}</p>
+				{$comment_text}
 			</div>
 
 			<div class="small-2 columns">
